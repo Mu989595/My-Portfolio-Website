@@ -2,56 +2,88 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import NewsletterForm from '../components/NewsletterForm.astro';
 import SocialLinks from '../components/SocialLinks.astro';
 import Skills from '../components/Skills.astro';
 ---
 
 <Layout title="About | Mostafa Kamal" description="Learn more about Mostafa Kamal and his journey.">
-  <Header />
-  
-  <main class="max-w-5xl mx-auto px-6">
-    <section class="py-20 flex flex-col md:flex-row gap-16 items-start">
-      <div class="flex-grow">
-        <h1 class="text-6xl md:text-8xl font-display font-bold uppercase tracking-tighter mb-12 leading-none">
-          The <span class="text-accent italic">Story</span> Behind Mostafa
-        </h1>
+  <div class="bg-gray-950 text-gray-200 min-h-screen relative overflow-hidden">
+    <!-- Faint Background Icons -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
+      <!-- Python -->
+      <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="absolute top-[10%] left-[5%] w-32 h-32 opacity-[0.03] fill-current">
+        <path d="M14.25.3a1.25 1.25 0 0 0-1.25 1.25v2.5h-5v-1.25A1.25 1.25 0 0 0 6.75 1.55h-2.5a1.25 1.25 0 0 0-1.25 1.25v2.5h1.25a1.25 1.25 0 0 1 1.25 1.25v2.5h2.5a1.25 1.25 0 0 0 1.25-1.25V6.3h5v1.25a1.25 1.25 0 0 0 1.25 1.25h2.5a1.25 1.25 0 0 0 1.25-1.25v-2.5h-1.25a1.25 1.25 0 0 1-1.25-1.25v-2.5h-2.5a1.25 1.25 0 0 0-1.25 1.25v2.5zM10.5 3.3a.75.75 0 1 1 0 1.5.75.75 0 0 1 0-1.5zm3 13.4a.75.75 0 1 1 0 1.5.75.75 0 0 1 0-1.5zM9.75 12.3a1.25 1.25 0 0 0-1.25 1.25v2.5h1.25a1.25 1.25 0 0 1 1.25 1.25v2.5h2.5a1.25 1.25 0 0 0 1.25-1.25V18.8h5v-1.25a1.25 1.25 0 0 0-1.25-1.25h-2.5a1.25 1.25 0 0 0-1.25 1.25V18.8h-5v-1.25a1.25 1.25 0 0 0-1.25-1.25h-2.5a1.25 1.25 0 0 0-1.25 1.25v2.5h1.25a1.25 1.25 0 0 1 1.25-1.25v-2.5h2.5a1.25 1.25 0 0 0 1.25-1.25v-2.5z"/>
+      </svg>
+      <!-- C# -->
+      <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="absolute top-[30%] left-[85%] w-40 h-40 opacity-[0.03] fill-current">
+        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.176 17.584c-1.392.834-3.084 1.344-4.884 1.344-4.992 0-9.032-4.04-9.032-9.032S7.3 .864 12.292.864c1.8 0 3.492.51 4.884 1.344v2.712A6.81 6.81 0 0 0 12.292 3.6c-3.6 0-6.52 2.92-6.52 6.52s2.92 6.52 6.52 6.52c1.8 0 3.42-.732 4.608-1.928v2.872zM21.24 8.76l1.24-.72-1.24-.72 1.24-.72-1.24-.72-1.24.72-1.24-.72-1.24.72 1.24.72-1.24.72 1.24.72 1.24-.72 1.24.72zm.24 3.24h-1.44v-1.44H18.6v1.44h-1.44v1.44H18.6v1.44h1.44v-1.44h1.44v-1.44z"/>
+      </svg>
+      <!-- .NET -->
+      <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="absolute top-[65%] left-[10%] w-48 h-48 opacity-[0.03] fill-current">
+        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm4.5 9.5c.828 0 1.5.672 1.5 1.5s-.672 1.5-1.5 1.5-1.5-.672-1.5-1.5.672-1.5 1.5-1.5zm-9 0c.828 0 1.5.672 1.5 1.5s-.672 1.5-1.5 1.5-1.5-.672-1.5-1.5.672-1.5 1.5-1.5zm4.5 5c2.485 0 4.5 2.015 4.5 4.5s-2.015 4.5-4.5 4.5-4.5-2.015-4.5-4.5 2.015-4.5 4.5-4.5z"/>
+      </svg>
+      <!-- MySQL -->
+      <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="absolute top-[85%] left-[75%] w-36 h-36 opacity-[0.03] fill-current">
+        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm8.28 15.36c-.6 1.8-1.56 3.48-2.88 4.92-.12.12-.24.12-.36 0-2.4-1.92-4.44-4.2-6.12-6.72-.12-.12-.12-.24 0-.36 1.68-2.52 3.72-4.8 6.12-6.72.12-.12.24-.12.36 0 1.32 1.44 2.28 3.12 2.88 4.92.12.36 0 .6-.24.84-2.16 2.04-2.16 5.16 0 7.2.24.24.36.48.24.84z"/>
+      </svg>
+    </div>
+
+    <Header />
+    
+    <main class="max-w-5xl mx-auto px-6 relative z-10">
+      <section class="py-20 flex flex-col md:flex-row gap-16 items-start">
+        <div class="flex-grow">
+          <h1 class="text-6xl md:text-8xl font-display font-bold uppercase tracking-tighter mb-12 leading-none text-white">
+            The <span class="text-accent italic">Story</span> Behind Mostafa
+          </h1>
+          
+          <div class="space-y-8 font-body text-xl md:text-2xl leading-relaxed max-w-2xl text-gray-300">
+            <p>
+              I am a dedicated backend developer who builds robust, scalable server-side systems for companies looking to make a serious impact. My approach combines technical precision with a deep understanding of architectural patterns.
+            </p>
+            <p>
+              I specialize in designing and managing high-performance databases using <strong>MySQL</strong> and <strong>SQL Server</strong>, ensuring data integrity and lightning-fast retrieval for complex applications.
+            </p>
+            <p class="border-l-8 border-accent pl-8 py-4 font-display font-bold uppercase text-3xl tracking-tight text-primary-red bg-white/5">
+              "Building the invisible foundations of modern innovation."
+            </p>
+            <p>
+              From <strong>Cloud Architecture</strong> to <strong>AI Integration</strong>, I bridge the gap between complex algorithms and practical, production-ready software solutions.
+            </p>
+          </div>
+        </div>
         
-        <div class="space-y-8 font-body text-xl md:text-2xl leading-relaxed max-w-2xl">
-          <p>
-            [PLACEHOLDER] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          </p>
-          <p>
-            [PLACEHOLDER] Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-          <p class="border-l-8 border-accent pl-8 py-4 font-display font-bold uppercase text-3xl tracking-tight text-primary-red">
-            "I believe that simplicity is the ultimate sophistication."
-          </p>
-          <p>
-            [PLACEHOLDER] Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+        <!-- Personal Photo -->
+        <div class="w-full md:w-80 h-96 border-4 border-primary-red relative overflow-hidden shrink-0 shadow-2xl group">
+          <img 
+            src="/personal-photo.jpg" 
+            alt="Mostafa Kamal" 
+            class="w-full h-full object-cover transition-all duration-500"
+          />
+          <div class="absolute inset-0 border-[20px] border-accent/5 pointer-events-none"></div>
+        </div>
+      </section>
+
+      <section class="py-24 border-t-4 border-primary-red mt-20">
+        <div class="bg-gray-900/50 p-12 border-2 border-white/5 backdrop-blur-sm">
+          <h2 class="text-4xl font-display font-bold uppercase mb-8 tracking-wide text-primary-red">
+            Professional <span class="text-white">Profile</span>
+          </h2>
+          <p class="text-2xl font-body leading-relaxed text-gray-200">
+            I'm a backend developer with a passion for building scalable and efficient systems for companies. I specialize in designing and managing databases (MySQL, SQL Server) and have extensive experience integrating AI into real-world applications. My toolkit includes <strong>Python, C#, .NET</strong>, and I follow best practices like <strong>OOP, DSA, and Clean Architecture</strong> to deliver high-quality software that stands the test of time.
           </p>
         </div>
-      </div>
-      
-      <!-- Placeholder for Image -->
-      <div class="w-full md:w-80 h-96 bg-gray-100 border-4 border-black flex items-center justify-center relative overflow-hidden shrink-0">
-        <span class="font-display font-bold uppercase text-xl opacity-20">Mostafa's Photo</span>
-        <div class="absolute inset-0 border-[20px] border-accent/10 pointer-events-none"></div>
-      </div>
-    </section>
+      </section>
 
-    <section class="py-24 border-t-4 border-black mt-20">
-      <Skills />
-    </section>
+      <section class="py-24 border-t-4 border-white/10">
+        <Skills />
+      </section>
 
-    <section class="my-24">
-      <SocialLinks />
-    </section>
+      <section class="my-24 py-24 border-t-4 border-white/10">
+        <SocialLinks />
+      </section>
+    </main>
 
-    <section class="my-24">
-      <NewsletterForm />
-    </section>
-  </main>
-
-  <Footer />
+    <Footer />
+  </div>
 </Layout>

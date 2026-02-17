@@ -2,60 +2,77 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import NewsletterForm from '../components/NewsletterForm.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 
 const projects = [
   {
-    title: "Project Alpha",
-    description: "A comprehensive tool built to solve complex problems in the financial sector. Highly scalable and minimal.",
-    tags: ["Astro", "Tailwind", "Rust"],
-    link: "#"
+    title: "SimpleWallet",
+    description: "A simple digital wallet system built with .NET, demonstrating core functionalities like balance management and transaction history.",
+    tags: [".NET", "C#", "SQL Server"],
+    link: "https://github.com/Mu989595/SimpleWallet.git"
   },
   {
-    title: "The Beta Protocol",
-    description: "An open-source protocol for decentralized communication. Focused on security and architectural clarity.",
-    tags: ["Go", "Distributed Systems"],
-    link: "#"
+    title: "Mini E-commerce API",
+    description: "A lightweight e-commerce API developed with ASP.NET Core, featuring product management, order processing, and integration with SQL Server.",
+    tags: ["ASP.NET Core", "C#", "SQL Server"],
+    link: "https://github.com/Mu989595/mini-e-commerce-API.git"
   },
   {
-    title: "Gamma Dashboard",
-    description: "Real-time analytics for modern businesses. Visualizing data in a way that actually makes sense.",
-    tags: ["React", "D3.js", "Node.js"],
-    link: "#"
-  },
-  {
-    title: "Delta Design System",
-    description: "A collection of reusable components and guidelines for building bold, minimal web applications.",
-    tags: ["CSS", "Design", "A11y"],
-    link: "#"
+    title: "Web API",
+    description: "A robust Web API project focused on clean architecture and scalable backend development using .NET technologies.",
+    tags: [".NET", "Web API", "Backend"],
+    link: "https://github.com/Mu989595/WebAPI.git"
   }
 ];
 ---
 
 <Layout title="Projects | Mostafa Kamal" description="A collection of projects and work by Mostafa Kamal.">
-  <Header />
-  
-  <main class="max-w-5xl mx-auto px-6">
-    <header class="py-20">
-      <h1 class="text-6xl md:text-9xl font-display font-bold uppercase tracking-tighter leading-none mb-8">
-        Works<span class="text-accent">&</span><br />Experiments
-      </h1>
-      <p class="text-2xl font-body max-w-2xl leading-relaxed">
-        A curated selection of things I've built, broken, and fixed. From production-ready tools to weekend experiments.
-      </p>
-    </header>
+  <div class="bg-gray-950 text-gray-200 min-h-screen relative overflow-hidden">
+    <!-- Faint Background Icons (Tech Themed) -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
+      <!-- C# Icon (Custom SVG) -->
+      <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="absolute top-[15%] left-[10%] w-48 h-48 opacity-[0.03] fill-current">
+        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.176 17.584c-1.392.834-3.084 1.344-4.884 1.344-4.992 0-9.032-4.04-9.032-9.032S7.3 .864 12.292.864c1.8 0 3.492.51 4.884 1.344v2.712A6.81 6.81 0 0 0 12.292 3.6c-3.6 0-6.52 2.92-6.52 6.52s2.92 6.52 6.52 6.52c1.8 0 3.42-.732 4.608-1.928v2.872zM21.24 8.76l1.24-.72-1.24-.72 1.24-.72-1.24-.72-1.24.72-1.24-.72-1.24.72 1.24.72-1.24.72 1.24.72 1.24-.72 1.24.72zm.24 3.24h-1.44v-1.44H18.6v1.44h-1.44v1.44H18.6v1.44h1.44v-1.44h1.44v-1.44z"/>
+      </svg>
+      <!-- .NET Icon -->
+      <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="absolute top-[60%] left-[80%] w-56 h-56 opacity-[0.03] fill-current text-primary-red">
+        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm4.5 9.5c.828 0 1.5.672 1.5 1.5s-.672 1.5-1.5 1.5-1.5-.672-1.5-1.5.672-1.5 1.5-1.5zm-9 0c.828 0 1.5.672 1.5 1.5s-.672 1.5-1.5 1.5-1.5-.672-1.5-1.5.672-1.5 1.5-1.5zm4.5 5c2.485 0 4.5 2.015 4.5 4.5s-2.015 4.5-4.5 4.5-4.5-2.015-4.5-4.5 2.015-4.5 4.5-4.5z"/>
+      </svg>
+      <!-- SQL Database Icon -->
+      <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="absolute top-[40%] left-[40%] w-32 h-32 opacity-[0.02] fill-current">
+        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm4.5 18H7.5v-1.5h9V18zm0-3H7.5V13.5h9V15zm0-3H7.5V10.5h9V12z"/>
+      </svg>
+    </div>
 
-    <section class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
-      {projects.map(project => (
-        <ProjectCard {...project} />
-      ))}
-    </section>
+    <Header />
+    
+    <main class="max-w-5xl mx-auto px-6 relative z-10">
+      <header class="py-20">
+        <h1 class="text-6xl md:text-9xl font-display font-bold uppercase tracking-tighter leading-none mb-8 text-white">
+          Major<span class="text-primary-red"> Work</span><br />Portfolios
+        </h1>
+        <p class="text-2xl font-body max-w-2xl leading-relaxed text-gray-400">
+          A selection of robust backends, APIs, and systems I've built using .NET and C#. Focused on scalability, clean architecture, and performance.
+        </p>
+      </header>
 
-    <section class="my-24">
-      <NewsletterForm />
-    </section>
-  </main>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
+        {projects.map(project => (
+          <ProjectCard {...project} />
+        ))}
+      </div>
+      
+      <!-- Call to Action -->
+      <section class="py-24 border-t-4 border-white/5 mt-20 text-center">
+        <h2 class="text-4xl font-display font-bold uppercase mb-8 tracking-wide">
+          Looking for custom <span class="text-primary-red">development</span>?
+        </h2>
+        <a href="mailto:mkmal2544@gmail.com" class="inline-block border-2 border-primary-red px-12 py-6 font-display font-bold text-2xl uppercase tracking-widest hover:bg-primary-red hover:text-white transition-all duration-300">
+          Start a Conversation
+        </a>
+      </section>
+    </main>
 
-  <Footer />
+    <Footer />
+  </div>
 </Layout>
