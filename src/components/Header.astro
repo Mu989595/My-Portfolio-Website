@@ -9,18 +9,18 @@ const { pathname } = Astro.url;
 const isActive = (href: string) => href === pathname || (href !== '/' && pathname.startsWith(href));
 ---
 
-<header class="py-8 px-6 max-w-5xl mx-auto flex justify-between items-center bg-white border-b-4 border-black mb-12">
+<header class="py-8 px-6 max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 border-b-4 border-black mb-12">
   <a href="/" class="text-4xl font-display font-bold uppercase tracking-tighter leading-none">
     Mostafa<span class="text-accent">.</span>
   </a>
   <nav>
-    <ul class="flex space-x-8">
+    <ul class="flex flex-wrap justify-center gap-x-8 gap-y-4">
       {navItems.map((item) => (
         <li>
           <a
             href={item.href}
             class:list={[
-              "text-xl font-display font-bold uppercase tracking-wide transition-colors duration-200",
+              "text-lg md:text-xl font-display font-bold uppercase tracking-wide transition-colors duration-200",
               isActive(item.href) ? "text-accent border-b-2 border-accent" : "hover:text-accent border-b-2 border-transparent"
             ]}
           >
