@@ -1,0 +1,61 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+
+const projects = [
+  {
+    title: "Project Alpha",
+    description: "A comprehensive tool built to solve complex problems in the financial sector. Highly scalable and minimal.",
+    tags: ["Astro", "Tailwind", "Rust"],
+    link: "#"
+  },
+  {
+    title: "The Beta Protocol",
+    description: "An open-source protocol for decentralized communication. Focused on security and architectural clarity.",
+    tags: ["Go", "Distributed Systems"],
+    link: "#"
+  },
+  {
+    title: "Gamma Dashboard",
+    description: "Real-time analytics for modern businesses. Visualizing data in a way that actually makes sense.",
+    tags: ["React", "D3.js", "Node.js"],
+    link: "#"
+  },
+  {
+    title: "Delta Design System",
+    description: "A collection of reusable components and guidelines for building bold, minimal web applications.",
+    tags: ["CSS", "Design", "A11y"],
+    link: "#"
+  }
+];
+---
+
+<Layout title="Projects | Mostafa Kamal" description="A collection of projects and work by Mostafa Kamal.">
+  <Header />
+  
+  <main class="max-w-5xl mx-auto px-6">
+    <header class="py-20">
+      <h1 class="text-6xl md:text-9xl font-display font-bold uppercase tracking-tighter leading-none mb-8">
+        Works<span class="text-accent">&</span><br />Experiments
+      </h1>
+      <p class="text-2xl font-body max-w-2xl leading-relaxed">
+        A curated selection of things I've built, broken, and fixed. From production-ready tools to weekend experiments.
+      </p>
+    </header>
+
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
+      {projects.map(project => (
+        <ProjectCard {...project} />
+      ))}
+    </section>
+
+    <section class="my-24">
+      <NewsletterForm />
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

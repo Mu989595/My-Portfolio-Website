@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
+import SocialLinks from '../components/SocialLinks.astro';
+import Skills from '../components/Skills.astro';
+---
+
+<Layout title="About | Mostafa Kamal" description="Learn more about Mostafa Kamal and his journey.">
+  <Header />
+  
+  <main class="max-w-5xl mx-auto px-6">
+    <section class="py-20 flex flex-col md:flex-row gap-16 items-start">
+      <div class="flex-grow">
+        <h1 class="text-6xl md:text-8xl font-display font-bold uppercase tracking-tighter mb-12 leading-none">
+          The <span class="text-accent italic">Story</span> Behind Mostafa
+        </h1>
+        
+        <div class="space-y-8 font-body text-xl md:text-2xl leading-relaxed max-w-2xl">
+          <p>
+            [PLACEHOLDER] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+          <p>
+            [PLACEHOLDER] Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+          <p class="border-l-8 border-accent pl-8 py-4 font-display font-bold uppercase text-3xl tracking-tight text-primary-red">
+            "I believe that simplicity is the ultimate sophistication."
+          </p>
+          <p>
+            [PLACEHOLDER] Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Placeholder for Image -->
+      <div class="w-full md:w-80 h-96 bg-gray-100 border-4 border-black flex items-center justify-center relative overflow-hidden shrink-0">
+        <span class="font-display font-bold uppercase text-xl opacity-20">Mostafa's Photo</span>
+        <div class="absolute inset-0 border-[20px] border-accent/10 pointer-events-none"></div>
+      </div>
+    </section>
+
+    <section class="py-24 border-t-4 border-black mt-20">
+      <Skills />
+    </section>
+
+    <section class="my-24">
+      <SocialLinks />
+    </section>
+
+    <section class="my-24">
+      <NewsletterForm />
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

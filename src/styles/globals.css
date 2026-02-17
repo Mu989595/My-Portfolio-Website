@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        font-size: 14px;
+        /* was 15px – reduced further for a tighter layout */
+    }
+
+    body {
+        @apply font-body bg-slate-50 text-black;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-display font-bold uppercase text-primary-red;
+    }
+
+    a {
+        @apply text-primary-red transition-all;
+    }
+}
+
+@layer components {
+    .text-accent {
+        @apply text-primary-red;
+    }
+
+    .bg-accent {
+        @apply bg-primary-red text-white;
+    }
+
+    .border-accent {
+        @apply border-primary-red;
+    }
+
+    /* New Red Utilities */
+    .bg-secondary {
+        @apply bg-secondary-red text-white;
+    }
+
+    .text-secondary {
+        @apply text-secondary-red;
+    }
+}
