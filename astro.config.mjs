@@ -5,6 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://Mostafamcpherson.com', // Placeholder URL
+    site: 'https://mostafa-kamal.pages.dev',
+    output: 'static',
     integrations: [tailwind(), sitemap()],
 });
